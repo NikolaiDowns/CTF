@@ -88,7 +88,7 @@ public class DudeFull extends Dude implements DynamicEntity{
                 (double)nearestFairy.get().getPosition().getX(),
                 (double)nearestFairy.get().getPosition().getY())<1.5)
         {
-            return true;
+            return false;
         }
         else if(nearestObstacle.isPresent() && distance(VirtualWorld.p2X,VirtualWorld.p2Y,
                 (double)nearestObstacle.get().getPosition().getX(),
