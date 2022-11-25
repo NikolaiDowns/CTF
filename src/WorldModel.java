@@ -134,21 +134,7 @@ public final class WorldModel
         return properties.length == Background.BGND_NUM_PROPERTIES;
     }
 
-    private boolean parseForest(
-            String[] properties, ImageStore imageStore)
-    {
-        if (properties.length == Forest.FOREST_NUM_PROPERTIES) {
-            Point pt = new Point(Integer.parseInt(properties[Forest.FOREST_COL]),
-                    Integer.parseInt(properties[Forest.FOREST_ROW]));
-            Forest entity = EntityFactory.createForest(properties[Forest.FOREST_ID], pt,
-                    Integer.parseInt(properties[Forest.FOREST_ANIMATION_PERIOD]),
-                    Integer.parseInt(properties[Forest.FOREST_ACTION_PERIOD]),
-                    imageStore.getImageList(Forest.FOREST_KEY));
-            this.tryAddEntity(entity);
-        }
 
-        return properties.length == Forest.FOREST_NUM_PROPERTIES;
-    }
 
     private boolean parseSapling(
             String[] properties, ImageStore imageStore)
@@ -338,8 +324,6 @@ public final class WorldModel
                     return parseSapling(properties, imageStore);
                 case Laser.LASER_KEY:
                     return parseLaser(properties, imageStore);
-                case Forest.FOREST_KEY:
-                    return parseForest(properties, imageStore);
                 case LeftScoreBoard.LeftScoreBoard_KEY:
                     return parseLeftScoreBoard(properties, imageStore);
                 case RightScoreBoard.RightScoreBoard_KEY:

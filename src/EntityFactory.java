@@ -69,12 +69,6 @@ public final class EntityFactory {
                 Sapling.SAPLING_ACTION_ANIMATION_PERIOD, Sapling.SAPLING_ACTION_ANIMATION_PERIOD, 0, Sapling.SAPLING_HEALTH_LIMIT);
     }
 
-    public static Forest createForest(
-            String id, Point position, int animationPeriod, int actionPeriod, List<PImage> images)
-    {
-        return new Forest(id, position, images, 0, 0, actionPeriod,
-                animationPeriod, 0, 0);
-    }
 
     public static Fairy createFairy(
             String id,

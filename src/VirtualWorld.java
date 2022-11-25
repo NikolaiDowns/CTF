@@ -8,6 +8,7 @@ import processing.core.*;
 
 public final class VirtualWorld extends PApplet
 {
+    //forest (8,4) to (31,19)
     public static double p1X;
     public static double p1Y;
 
