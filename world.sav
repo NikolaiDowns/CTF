@@ -322,7 +322,6 @@ background grass 0 8
 background grass 1 8
 background grass 2 8
 background grass 3 8
-background bridge 4 8
 background grass 5 8
 background grass 6 8
 background flowers 7 8
@@ -362,7 +361,6 @@ background flowers 0 9
 background grass 1 9
 background grass 2 9
 background grass 3 9
-background bridge 4 9
 background dirt 5 9
 background flowers 6 9
 background flowers 7 9
@@ -794,8 +792,6 @@ background flowers 32 19
 background flowers 33 19
 background flowers 34 19
 background grass 35 19
-background bridge 36 19
-background bridge 37 19
 background grass 38 19
 background grass 39 19
 background grass 0 20
@@ -834,7 +830,6 @@ background grass 32 20
 background grass 33 20
 background grass 34 20
 background grass 35 20
-background bridge 36 20
 background flowers 37 20
 background grass 38 20
 background flowers 39 20
@@ -1198,165 +1193,384 @@ background grass 36 29
 background flowers 37 29
 background flowers 38 29
 background flowers 39 29
-obstacle obstacle_13_7 13 7 1126
 fairy fairy_0_0 0 0 51 800
-tree tree_0_2 0 2 501 1289 2
-obstacle obstacle_17_9 17 9 1105
-tree tree_30_6 30 6 50 1006 2
 fairy fairy_28_4 28 4 51 800
-obstacle obstacle_9_7 9 7 1159
-tree tree_5_0 5 0 451 1315 2
-obstacle obstacle_17_10 17 10 1047
-obstacle obstacle_11_8 11 8 1049
-tree tree_1_15 1 15 52 1371 1
-obstacle obstacle_36_19 36 19 1021
-tree tree_11_13 11 13 472 1006 2
-obstacle obstacle_10_8 10 8 1055
-obstacle obstacle_33_20 33 20 1153
-tree tree_7_5 7 5 504 1382 2
-obstacle obstacle_12_7 12 7 1109
-obstacle obstacle_2_9 2 9 1091
-obstacle obstacle_35_19 35 19 1184
-obstacle obstacle_14_7 14 7 1135
-obstacle obstacle_23_17 23 17 1140
-obstacle obstacle_22_16 22 16 1185
-obstacle obstacle_22_14 22 14 1108
-obstacle obstacle_36_20 36 20 1104
-tree tree_18_4 18 4 513 1330 2
-tree tree_2_25 2 25 93 1041 2
-tree tree_26_1 26 1 129 1231 1
-tree tree_1_1 1 1 419 1335 1
-tree tree_16_4 16 4 187 1253 2
-tree tree_7_3 7 3 438 1354 2
-tree tree_27_8 27 8 160 1328 1
-obstacle obstacle_39_18 39 18 1086
-obstacle obstacle_17_11 17 11 1165
-obstacle obstacle_11_7 11 7 1197
-obstacle obstacle_5_9 5 9 1154
-obstacle obstacle_20_12 20 12 1135
-obstacle obstacle_34_21 34 21 1107
-obstacle obstacle_29_20 29 20 1001
-tree tree_7_0 7 0 522 1352 1
-tree tree_3_0 3 0 185 1387 1
-tree tree_1_3 1 3 357 1164 2
-obstacle obstacle_15_8 15 8 1158
-obstacle obstacle_14_8 14 8 1097
-tree tree_10_13 10 13 262 1205 1
-tree tree_27_10 27 10 346 1361 1
-tree tree_2_4 2 4 114 1088 1
-tree tree_3_24 3 24 162 1314 1
-tree tree_1_2 1 2 553 1206 1
-obstacle obstacle_24_18 24 18 1038
 fairy fairy_39_29 39 29 51 800
-obstacle obstacle_21_14 21 14 1040
-obstacle obstacle_21_16 21 16 1053
-tree tree_6_3 6 3 516 1068 2
-tree tree_25_26 25 26 542 1190 1
-obstacle obstacle_5_7 5 7 1193
-obstacle obstacle_29_19 29 19 1149
-tree tree_13_15 13 15 203 1381 2
-obstacle obstacle_28_20 28 20 1113
-obstacle obstacle_28_19 28 19 1017
-tree tree_6_2 6 2 554 1165 1
-obstacle obstacle_9_8 9 8 1042
-obstacle obstacle_31_20 31 20 1140
-tree tree_18_0 18 0 294 1045 2
-tree tree_31_7 31 7 391 1024 2
-obstacle obstacle_24_17 24 17 1083
-obstacle obstacle_25_19 25 19 1072
-obstacle obstacle_21_13 21 13 1006
-tree tree_19_1 19 1 300 1154 1
-tree tree_8_1 8 1 106 1269 1
-obstacle obstacle_18_12 18 12 1190
-obstacle obstacle_35_21 35 21 1147
-obstacle obstacle_18_11 18 11 1089
-obstacle obstacle_5_8 5 8 1097
-obstacle obstacle_0_8 0 8 1018
-obstacle obstacle_0_7 0 7 1141
-tree tree_25_4 25 4 198 1106 2
-obstacle obstacle_33_21 33 21 1192
-obstacle obstacle_30_20 30 20 1105
-tree tree_27_2 27 2 544 1354 2
-tree tree_24_26 24 26 527 1389 1
-obstacle obstacle_21_15 21 15 1166
-obstacle obstacle_22_15 22 15 1101
-obstacle obstacle_32_20 32 20 1171
-obstacle obstacle_13_8 13 8 1025
-obstacle obstacle_38_18 38 18 1091
-obstacle obstacle_31_21 31 21 1060
-obstacle obstacle_24_19 24 19 1048
-obstacle obstacle_19_12 19 12 1175
-obstacle obstacle_6_8 6 8 1038
-obstacle obstacle_16_9 16 9 1190
-obstacle obstacle_27_19 27 19 1116
-obstacle obstacle_7_8 7 8 1156
-obstacle obstacle_19_13 19 13 1010
-tree tree_27_1 27 1 384 1266 2
-obstacle obstacle_25_20 25 20 1156
-obstacle obstacle_2_8 2 8 1156
-obstacle obstacle_6_7 6 7 1167
-obstacle obstacle_35_20 35 20 1093
-obstacle obstacle_30_21 30 21 1143
-tree tree_1_14 1 14 366 1165 2
-obstacle obstacle_26_20 26 20 1082
-obstacle obstacle_12_8 12 8 1148
-tree tree_6_22 6 22 328 1155 2
-tree tree_25_27 25 27 471 1004 1
-obstacle obstacle_17_12 17 12 1145
-obstacle obstacle_3_8 3 8 1019
-obstacle obstacle_27_20 27 20 1161
-obstacle obstacle_16_10 16 10 1083
-obstacle obstacle_10_7 10 7 1063
-tree tree_24_5 24 5 328 1194 2
-tree tree_5_21 5 21 550 1278 1
-tree tree_26_26 26 26 339 1113 1
-tree tree_4_25 4 25 170 1038 1
-obstacle obstacle_8_8 8 8 1017
-tree tree_8_3 8 3 406 1186 1
-obstacle obstacle_25_18 25 18 1125
-obstacle obstacle_22_17 22 17 1052
-tree tree_23_4 23 4 419 1128 2
-obstacle obstacle_1_8 1 8 1041
-obstacle obstacle_19_11 19 11 1071
-tree tree_17_3 17 3 61 1050 1
-obstacle obstacle_1_9 1 9 1112
 fairy fairy_13_10 13 10 51 800
 dude dude_4_3 4 3 3 100 100
-dude dude_15_8 25 9 100 100
-obstacle obstacle_38_19 38 19 1098
-obstacle obstacle_23_18 23 18 1079
-obstacle obstacle_20_13 20 13 1075
-obstacle obstacle_23_16 23 16 1101
-obstacle obstacle_15_9 15 9 1118
-obstacle obstacle_7_7 7 7 1183
-tree tree_25_5 25 5 330 1328 1
-obstacle obstacle_34_20 34 20 1014
-obstacle obstacle_3_9 3 9 1199
-tree tree_17_4 17 4 111 1206 1
-obstacle obstacle_20_14 20 14 1140
-tree tree_24_4 24 4 182 1027 2
-tree tree_26_9 26 9 594 1345 1
-obstacle obstacle_8_7 8 7 1101
-tree tree_11_14 11 14 173 1274 1
-tree tree_31_6 31 6 69 1273 1
-obstacle obstacle_26_19 26 19 1057
-tree tree_5_5 5 5 545 1343 1
-obstacle obstacle_32_21 32 21 1139
-house house_15_16 15 18 1800
+dude dude_35_15 35 15 100 100
 score_l left_2_2 2 2 1800
-score_r right_20_2 20 2 1800
-forest forest_12_20 12 20 800 800 99
-forest forest_12_21 12 21 800 800 99
-forest forest_12_22 12 22 800 800 99
-forest forest_12_23 12 23 800 800 99
-forest forest_12_24 12 24 800 800 99
-forest forest_13_20 13 20 800 800 99
-forest forest_13_21 13 21 800 800 99
-forest forest_13_22 13 22 800 800 99
-forest forest_13_23 13 23 800 800 99
-forest forest_13_24 13 24 800 800 99
-forest forest_14_20 14 20 800 800 99
-forest forest_14_21 14 21 800 800 99
-forest forest_14_22 14 22 800 800 99
-forest forest_14_23 14 23 800 800 99
-forest forest_14_24 14 24 800 800 99
+score_r right_37_2 37 2 1800
+forest forest_8_6 8 6 800 800 99
+forest forest_8_7 8 7 800 800 99
+forest forest_8_8 8 8 800 800 99
+forest forest_8_9 8 9 800 800 99
+forest forest_8_10 8 10 800 800 99
+forest forest_8_11 8 11 800 800 99
+forest forest_8_12 8 12 800 800 99
+forest forest_8_13 8 13 800 800 99
+forest forest_8_14 8 14 800 800 99
+forest forest_8_15 8 15 800 800 99
+forest forest_8_16 8 16 800 800 99
+forest forest_8_17 8 17 800 800 99
+forest forest_8_18 8 18 800 800 99
+forest forest_8_19 8 19 800 800 99
+forest forest_9_6 9 6 800 800 99
+forest forest_9_7 9 7 800 800 99
+forest forest_9_8 9 8 800 800 99
+forest forest_9_9 9 9 800 800 99
+forest forest_9_10 9 10 800 800 99
+forest forest_9_11 9 11 800 800 99
+forest forest_9_12 9 12 800 800 99
+forest forest_9_13 9 13 800 800 99
+forest forest_9_14 9 14 800 800 99
+forest forest_9_15 9 15 800 800 99
+forest forest_9_16 9 16 800 800 99
+forest forest_9_17 9 17 800 800 99
+forest forest_9_18 9 18 800 800 99
+forest forest_9_19 9 19 800 800 99
+forest forest_10_6 10 6 800 800 99
+forest forest_10_7 10 7 800 800 99
+forest forest_10_8 10 8 800 800 99
+forest forest_10_9 10 9 800 800 99
+forest forest_10_10 10 10 800 800 99
+forest forest_10_11 10 11 800 800 99
+forest forest_10_12 10 12 800 800 99
+forest forest_10_13 10 13 800 800 99
+forest forest_10_14 10 14 800 800 99
+forest forest_10_15 10 15 800 800 99
+forest forest_10_16 10 16 800 800 99
+forest forest_10_17 10 17 800 800 99
+forest forest_10_18 10 18 800 800 99
+forest forest_10_19 10 19 800 800 99
+forest forest_11_6 11 6 800 800 99
+forest forest_11_7 11 7 800 800 99
+forest forest_11_8 11 8 800 800 99
+forest forest_11_9 11 9 800 800 99
+forest forest_11_10 11 10 800 800 99
+forest forest_11_11 11 11 800 800 99
+forest forest_11_12 11 12 800 800 99
+forest forest_11_13 11 13 800 800 99
+forest forest_11_14 11 14 800 800 99
+forest forest_11_15 11 15 800 800 99
+forest forest_11_16 11 16 800 800 99
+forest forest_11_17 11 17 800 800 99
+forest forest_11_18 11 18 800 800 99
+forest forest_11_19 11 19 800 800 99
+forest forest_12_6 12 6 800 800 99
+forest forest_12_7 12 7 800 800 99
+forest forest_12_8 12 8 800 800 99
+forest forest_12_9 12 9 800 800 99
+forest forest_12_10 12 10 800 800 99
+forest forest_12_11 12 11 800 800 99
+forest forest_12_12 12 12 800 800 99
+forest forest_12_13 12 13 800 800 99
+forest forest_12_14 12 14 800 800 99
+forest forest_12_15 12 15 800 800 99
+forest forest_12_16 12 16 800 800 99
+forest forest_12_17 12 17 800 800 99
+forest forest_12_18 12 18 800 800 99
+forest forest_12_19 12 19 800 800 99
+forest forest_13_6 13 6 800 800 99
+forest forest_13_7 13 7 800 800 99
+forest forest_13_8 13 8 800 800 99
+forest forest_13_9 13 9 800 800 99
+forest forest_13_10 13 10 800 800 99
+forest forest_13_11 13 11 800 800 99
+forest forest_13_12 13 12 800 800 99
+forest forest_13_13 13 13 800 800 99
+forest forest_13_14 13 14 800 800 99
+forest forest_13_15 13 15 800 800 99
+forest forest_13_16 13 16 800 800 99
+forest forest_13_17 13 17 800 800 99
+forest forest_13_18 13 18 800 800 99
+forest forest_13_19 13 19 800 800 99
+forest forest_14_6 14 6 800 800 99
+forest forest_14_7 14 7 800 800 99
+forest forest_14_8 14 8 800 800 99
+forest forest_14_9 14 9 800 800 99
+forest forest_14_10 14 10 800 800 99
+forest forest_14_11 14 11 800 800 99
+forest forest_14_12 14 12 800 800 99
+forest forest_14_13 14 13 800 800 99
+forest forest_14_14 14 14 800 800 99
+forest forest_14_15 14 15 800 800 99
+forest forest_14_16 14 16 800 800 99
+forest forest_14_17 14 17 800 800 99
+forest forest_14_18 14 18 800 800 99
+forest forest_14_19 14 19 800 800 99
+forest forest_15_6 15 6 800 800 99
+forest forest_15_7 15 7 800 800 99
+forest forest_15_8 15 8 800 800 99
+forest forest_15_9 15 9 800 800 99
+forest forest_15_10 15 10 800 800 99
+forest forest_15_11 15 11 800 800 99
+forest forest_15_12 15 12 800 800 99
+forest forest_15_13 15 13 800 800 99
+forest forest_15_14 15 14 800 800 99
+forest forest_15_15 15 15 800 800 99
+forest forest_15_16 15 16 800 800 99
+forest forest_15_17 15 17 800 800 99
+forest forest_15_18 15 18 800 800 99
+forest forest_15_19 15 19 800 800 99
+forest forest_16_6 16 6 800 800 99
+forest forest_16_7 16 7 800 800 99
+forest forest_16_8 16 8 800 800 99
+forest forest_16_9 16 9 800 800 99
+forest forest_16_10 16 10 800 800 99
+forest forest_16_11 16 11 800 800 99
+forest forest_16_12 16 12 800 800 99
+forest forest_16_13 16 13 800 800 99
+forest forest_16_14 16 14 800 800 99
+forest forest_16_15 16 15 800 800 99
+forest forest_16_16 16 16 800 800 99
+forest forest_16_17 16 17 800 800 99
+forest forest_16_18 16 18 800 800 99
+forest forest_16_19 16 19 800 800 99
+forest forest_17_6 17 6 800 800 99
+forest forest_17_7 17 7 800 800 99
+forest forest_17_8 17 8 800 800 99
+forest forest_17_9 17 9 800 800 99
+forest forest_17_10 17 10 800 800 99
+forest forest_17_11 17 11 800 800 99
+forest forest_17_12 17 12 800 800 99
+forest forest_17_13 17 13 800 800 99
+forest forest_17_14 17 14 800 800 99
+forest forest_17_15 17 15 800 800 99
+forest forest_17_16 17 16 800 800 99
+forest forest_17_17 17 17 800 800 99
+forest forest_17_18 17 18 800 800 99
+forest forest_17_19 17 19 800 800 99
+forest forest_18_6 18 6 800 800 99
+forest forest_18_7 18 7 800 800 99
+forest forest_18_8 18 8 800 800 99
+forest forest_18_9 18 9 800 800 99
+forest forest_18_10 18 10 800 800 99
+forest forest_18_11 18 11 800 800 99
+forest forest_18_12 18 12 800 800 99
+forest forest_18_13 18 13 800 800 99
+forest forest_18_14 18 14 800 800 99
+forest forest_18_15 18 15 800 800 99
+forest forest_18_16 18 16 800 800 99
+forest forest_18_17 18 17 800 800 99
+forest forest_18_18 18 18 800 800 99
+forest forest_18_19 18 19 800 800 99
+forest forest_19_6 19 6 800 800 99
+forest forest_19_7 19 7 800 800 99
+forest forest_19_8 19 8 800 800 99
+forest forest_19_9 19 9 800 800 99
+forest forest_19_10 19 10 800 800 99
+forest forest_19_11 19 11 800 800 99
+forest forest_19_12 19 12 800 800 99
+forest forest_19_13 19 13 800 800 99
+forest forest_19_14 19 14 800 800 99
+forest forest_19_15 19 15 800 800 99
+forest forest_19_16 19 16 800 800 99
+forest forest_19_17 19 17 800 800 99
+forest forest_19_18 19 18 800 800 99
+forest forest_19_19 19 19 800 800 99
+forest forest_20_6 20 6 800 800 99
+forest forest_20_7 20 7 800 800 99
+forest forest_20_8 20 8 800 800 99
+forest forest_20_9 20 9 800 800 99
+forest forest_20_10 20 10 800 800 99
+forest forest_20_11 20 11 800 800 99
+forest forest_20_12 20 12 800 800 99
+forest forest_20_13 20 13 800 800 99
+forest forest_20_14 20 14 800 800 99
+forest forest_20_15 20 15 800 800 99
+forest forest_20_16 20 16 800 800 99
+forest forest_20_17 20 17 800 800 99
+forest forest_20_18 20 18 800 800 99
+forest forest_20_19 20 19 800 800 99
+forest forest_21_6 21 6 800 800 99
+forest forest_21_7 21 7 800 800 99
+forest forest_21_8 21 8 800 800 99
+forest forest_21_9 21 9 800 800 99
+forest forest_21_10 21 10 800 800 99
+forest forest_21_11 21 11 800 800 99
+forest forest_21_12 21 12 800 800 99
+forest forest_21_13 21 13 800 800 99
+forest forest_21_14 21 14 800 800 99
+forest forest_21_15 21 15 800 800 99
+forest forest_21_16 21 16 800 800 99
+forest forest_21_17 21 17 800 800 99
+forest forest_21_18 21 18 800 800 99
+forest forest_21_19 21 19 800 800 99
+forest forest_22_6 22 6 800 800 99
+forest forest_22_7 22 7 800 800 99
+forest forest_22_8 22 8 800 800 99
+forest forest_22_9 22 9 800 800 99
+forest forest_22_10 22 10 800 800 99
+forest forest_22_11 22 11 800 800 99
+forest forest_22_12 22 12 800 800 99
+forest forest_22_13 22 13 800 800 99
+forest forest_22_14 22 14 800 800 99
+forest forest_22_15 22 15 800 800 99
+forest forest_22_16 22 16 800 800 99
+forest forest_22_17 22 17 800 800 99
+forest forest_22_18 22 18 800 800 99
+forest forest_22_19 22 19 800 800 99
+forest forest_23_6 23 6 800 800 99
+forest forest_23_7 23 7 800 800 99
+forest forest_23_8 23 8 800 800 99
+forest forest_23_9 23 9 800 800 99
+forest forest_23_10 23 10 800 800 99
+forest forest_23_11 23 11 800 800 99
+forest forest_23_12 23 12 800 800 99
+forest forest_23_13 23 13 800 800 99
+forest forest_23_14 23 14 800 800 99
+forest forest_23_15 23 15 800 800 99
+forest forest_23_16 23 16 800 800 99
+forest forest_23_17 23 17 800 800 99
+forest forest_23_18 23 18 800 800 99
+forest forest_23_19 23 19 800 800 99
+forest forest_24_6 24 6 800 800 99
+forest forest_24_7 24 7 800 800 99
+forest forest_24_8 24 8 800 800 99
+forest forest_24_9 24 9 800 800 99
+forest forest_24_10 24 10 800 800 99
+forest forest_24_11 24 11 800 800 99
+forest forest_24_12 24 12 800 800 99
+forest forest_24_13 24 13 800 800 99
+forest forest_24_14 24 14 800 800 99
+forest forest_24_15 24 15 800 800 99
+forest forest_24_16 24 16 800 800 99
+forest forest_24_17 24 17 800 800 99
+forest forest_24_18 24 18 800 800 99
+forest forest_24_19 24 19 800 800 99
+forest forest_25_6 25 6 800 800 99
+forest forest_25_7 25 7 800 800 99
+forest forest_25_8 25 8 800 800 99
+forest forest_25_9 25 9 800 800 99
+forest forest_25_10 25 10 800 800 99
+forest forest_25_11 25 11 800 800 99
+forest forest_25_12 25 12 800 800 99
+forest forest_25_13 25 13 800 800 99
+forest forest_25_14 25 14 800 800 99
+forest forest_25_15 25 15 800 800 99
+forest forest_25_16 25 16 800 800 99
+forest forest_25_17 25 17 800 800 99
+forest forest_25_18 25 18 800 800 99
+forest forest_25_19 25 19 800 800 99
+forest forest_26_6 26 6 800 800 99
+forest forest_26_7 26 7 800 800 99
+forest forest_26_8 26 8 800 800 99
+forest forest_26_9 26 9 800 800 99
+forest forest_26_10 26 10 800 800 99
+forest forest_26_11 26 11 800 800 99
+forest forest_26_12 26 12 800 800 99
+forest forest_26_13 26 13 800 800 99
+forest forest_26_14 26 14 800 800 99
+forest forest_26_15 26 15 800 800 99
+forest forest_26_16 26 16 800 800 99
+forest forest_26_17 26 17 800 800 99
+forest forest_26_18 26 18 800 800 99
+forest forest_26_19 26 19 800 800 99
+forest forest_27_6 27 6 800 800 99
+forest forest_27_7 27 7 800 800 99
+forest forest_27_8 27 8 800 800 99
+forest forest_27_9 27 9 800 800 99
+forest forest_27_10 27 10 800 800 99
+forest forest_27_11 27 11 800 800 99
+forest forest_27_12 27 12 800 800 99
+forest forest_27_13 27 13 800 800 99
+forest forest_27_14 27 14 800 800 99
+forest forest_27_15 27 15 800 800 99
+forest forest_27_16 27 16 800 800 99
+forest forest_27_17 27 17 800 800 99
+forest forest_27_18 27 18 800 800 99
+forest forest_27_19 27 19 800 800 99
+forest forest_28_6 28 6 800 800 99
+forest forest_28_7 28 7 800 800 99
+forest forest_28_8 28 8 800 800 99
+forest forest_28_9 28 9 800 800 99
+forest forest_28_10 28 10 800 800 99
+forest forest_28_11 28 11 800 800 99
+forest forest_28_12 28 12 800 800 99
+forest forest_28_13 28 13 800 800 99
+forest forest_28_14 28 14 800 800 99
+forest forest_28_15 28 15 800 800 99
+forest forest_28_16 28 16 800 800 99
+forest forest_28_17 28 17 800 800 99
+forest forest_28_18 28 18 800 800 99
+forest forest_28_19 28 19 800 800 99
+forest forest_29_6 29 6 800 800 99
+forest forest_29_7 29 7 800 800 99
+forest forest_29_8 29 8 800 800 99
+forest forest_29_9 29 9 800 800 99
+forest forest_29_10 29 10 800 800 99
+forest forest_29_11 29 11 800 800 99
+forest forest_29_12 29 12 800 800 99
+forest forest_29_13 29 13 800 800 99
+forest forest_29_14 29 14 800 800 99
+forest forest_29_15 29 15 800 800 99
+forest forest_29_16 29 16 800 800 99
+forest forest_29_17 29 17 800 800 99
+forest forest_29_18 29 18 800 800 99
+forest forest_29_19 29 19 800 800 99
+forest forest_30_6 30 6 800 800 99
+forest forest_30_7 30 7 800 800 99
+forest forest_30_8 30 8 800 800 99
+forest forest_30_9 30 9 800 800 99
+forest forest_30_10 30 10 800 800 99
+forest forest_30_11 30 11 800 800 99
+forest forest_30_12 30 12 800 800 99
+forest forest_30_13 30 13 800 800 99
+forest forest_30_14 30 14 800 800 99
+forest forest_30_15 30 15 800 800 99
+forest forest_30_16 30 16 800 800 99
+forest forest_30_17 30 17 800 800 99
+forest forest_30_18 30 18 800 800 99
+forest forest_30_19 30 19 800 800 99
+forest forest_31_6 31 6 800 800 99
+forest forest_31_7 31 7 800 800 99
+forest forest_31_8 31 8 800 800 99
+forest forest_31_9 31 9 800 800 99
+forest forest_31_10 31 10 800 800 99
+forest forest_31_11 31 11 800 800 99
+forest forest_31_12 31 12 800 800 99
+forest forest_31_13 31 13 800 800 99
+forest forest_31_14 31 14 800 800 99
+forest forest_31_15 31 15 800 800 99
+forest forest_31_16 31 16 800 800 99
+forest forest_31_17 31 17 800 800 99
+forest forest_31_18 31 18 800 800 99
+forest forest_31_19 31 19 800 800 99
+forest forest_32_6 32 6 800 800 99
+forest forest_32_7 32 7 800 800 99
+forest forest_32_8 32 8 800 800 99
+forest forest_32_9 32 9 800 800 99
+forest forest_32_10 32 10 800 800 99
+forest forest_32_11 32 11 800 800 99
+forest forest_32_12 32 12 800 800 99
+forest forest_32_13 32 13 800 800 99
+forest forest_32_14 32 14 800 800 99
+forest forest_32_15 32 15 800 800 99
+forest forest_32_16 32 16 800 800 99
+forest forest_32_17 32 17 800 800 99
+forest forest_32_18 32 18 800 800 99
+forest forest_32_19 32 19 800 800 99
+forest forest_33_6 33 6 800 800 99
+forest forest_33_7 33 7 800 800 99
+forest forest_33_8 33 8 800 800 99
+forest forest_33_9 33 9 800 800 99
+forest forest_33_10 33 10 800 800 99
+forest forest_33_11 33 11 800 800 99
+forest forest_33_12 33 12 800 800 99
+forest forest_33_13 33 13 800 800 99
+forest forest_33_14 33 14 800 800 99
+forest forest_33_15 33 15 800 800 99
+forest forest_33_16 33 16 800 800 99
+forest forest_33_17 33 17 800 800 99
+forest forest_33_18 33 18 800 800 99
+forest forest_33_19 33 19 800 800 99
+house house_4_22 4 15 1800
+house house_9_2 15 2 1800
+house house_30_2 27 1 1800
+house house_36_21 30 24 1800
+background grass 36 19
+background grass 37 19
+background grass 36 20
+background grass 4 8
+background grass 4 9

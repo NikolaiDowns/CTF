@@ -11,7 +11,7 @@ public class DudeNotFull extends Dude implements DynamicEntity{
     public static final int NOT_FULL_ACTION_PERIOD = 5;
     public static final int NOT_FULL_ANIMATION_PERIOD = 6;
 
-    private static final Point myZone = new Point(2,0);
+    private static final Point myZone = new Point(35,15);
     private static final Point goalZone = new Point(8,0);
 
     private static DudeNotFull p1;
