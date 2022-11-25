@@ -24,6 +24,7 @@ public abstract class Plant extends Entity implements ScheduledEntity, DynamicEn
             WorldModel world,
             ImageStore imageStore)
     {
+        System.out.println("hello world");
         scheduler.scheduleEvent(this,
                 this.createActivityAction(world, imageStore),
                 this.actionPeriod);
