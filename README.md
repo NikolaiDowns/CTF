@@ -1,2 +1,2 @@
 # CTF
-Capture The FLag Babbbyyyyyyyy
+Capture The Flag PApplet module developed by Nikolai Downs and Yoav Levanoni to fullfil OOP Project Based Class requirements.
