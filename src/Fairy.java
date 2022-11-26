@@ -52,7 +52,11 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
         List<Point> points;
 
         points = strategy.computePath(this.position, destPos,
-                p ->  withinBounds(p, world) && !(world.isOccupied(p)),
+                p ->  withinBounds(p, world)
+                        && p.getY() <= 19
+                        && p.getY() >= 4
+                        && p.getX() >= 8
+                        && p.getX() <= 31,
                 (p1, p2) -> neighbors(p1,p2),
                 PathingStrategy.DIAGONAL_CARDINAL_NEIGHBORS );
         //PathingStrategy.CARDINAL_NEIGHBORS);
@@ -87,7 +91,7 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
 //            return;
 //        }
         Point nextPos = this.nextPositionFairy(world, target.position);
-            if (!this.position.equals(nextPos)) {
+            if (!this.position.equals(nextPos) && !(world.isOccupied(nextPos))) {
 //                Optional<Entity> occupant = world.getOccupant(nextPos);
 //                if (occupant.isPresent()) {
 //                    scheduler.unscheduleAllEvents(occupant.get());
