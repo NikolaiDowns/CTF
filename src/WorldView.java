@@ -1,5 +1,6 @@
 import processing.core.PApplet;
 import processing.core.PImage;
+import java.util.Random;
 
 import java.util.Optional;
 
@@ -43,40 +44,22 @@ public final class WorldView
     }
 
     private void drawEntities() {
+        growForest();
         for (Entity entity : this.world.getEntities()) {
             Point pos = entity.getPosition();
 
-            if( entity instanceof DudeNotFull)
-            {
-//                this.screen.image(entity.getCurrentImage(),
-//                        (float)VirtualWorld.p1X * this.tileWidth,
-//                        (float)VirtualWorld.p1Y * this.tileHeight);
-            }
-            else if( entity instanceof DudeFull)
-            {
-//                this.screen.image(entity.getCurrentImage(),
-//                        (float)VirtualWorld.p2X * this.tileWidth,
-//                        (float)VirtualWorld.p2Y * this.tileHeight);
-            }
-            else if( entity instanceof LeftScoreBoard)
-            {
-//                this.screen.image(entity.getCurrentImage(),
-//                        (float)VirtualWorld.p1X * this.tileWidth,
-//                        (float)VirtualWorld.p1Y * this.tileHeight);
-            }
-            else if( entity instanceof RightScoreBoard)
-            {
-//                this.screen.image(entity.getCurrentImage(),
-//                        (float)VirtualWorld.p2X * this.tileWidth,
-//                        (float)VirtualWorld.p2Y * this.tileHeight);
-            }
-            else if( entity instanceof Laser)
+            if( entity instanceof Laser)
             {
                 this.screen.image(entity.getCurrentImage(),
                         (float)((Laser) entity).getX() * this.tileWidth,
                         (float)((Laser) entity).getY() * this.tileHeight);
             }
-            else if (this.viewport.contains(pos)) {
+            else if (this.viewport.contains(pos) &&
+                    !(entity instanceof DudeNotFull) &&
+                    !(entity instanceof DudeFull) &&
+                    !(entity instanceof LeftScoreBoard) &&
+                    !(entity instanceof RightScoreBoard))
+            {
                 Point viewPoint = this.viewport.worldToViewport(pos.getX(), pos.getY());
                 this.screen.image(entity.getCurrentImage(),
                         viewPoint.getX() * this.tileWidth,
@@ -119,6 +102,45 @@ public final class WorldView
                         viewPoint.getY() * this.tileHeight);
             }
 
+        }
+    }
+
+    private void growForest()
+    {
+        growForestSection(8,31,4,19,500000);
+        growForestSection(8,31,4,8,300000);
+        growForestSection(8,31,15,19,300000);
+        growForestSection(8,12,4,19,300000);
+        growForestSection(27,31,4,19,300000);
+    }
+
+    private void growForestSection(int xLow, int xHigh, int yLow, int yHigh, int odds)
+    {
+        Random random = new Random();
+        for (int i=xLow; i<xHigh; i++)
+        {
+            for (int j=yLow; j<yHigh; j++)
+            {
+                int value = random.nextInt(odds);
+                if(value % (odds-1) == 0 &&
+                        !(world.isOccupied(new Point(i,j))) &&
+                        !(world.isOccupied(new Point(i+1,j))) &&
+                        !(world.isOccupied(new Point(i+1,j+1))) &&
+                        !(world.isOccupied(new Point(i+1,j-1))) &&
+                        !(world.isOccupied(new Point(i-1,j))) &&
+                        !(world.isOccupied(new Point(i-1,j+1))) &&
+                        !(world.isOccupied(new Point(i-1,j-1))) &&
+                        !(world.isOccupied(new Point(i,j+1))) &&
+                        !(world.isOccupied(new Point(i,j-1))) )
+                {
+                    System.out.println("make tree");
+                    String id = "tree_" + i +"_" + j;
+                    Obstacle obs = EntityFactory.createObstacle(
+                            id,new Point(i,j), 500,
+                            VirtualWorld.imageList.getImageList("tree"));
+                    world.tryAddEntity(obs);
+                }
+            }
         }
     }
 

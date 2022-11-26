@@ -70,7 +70,7 @@ public class Laser extends Entity implements DynamicEntity, ScheduledEntity{
         Point nextPos = new Point ((int) x, (int) y);
         if (withinBounds(nextPos, world) && !(world.isOccupied(nextPos)))
         {
-            //world.moveEntity(this, nextPos);
+            world.moveEntity(this, nextPos);
             this.setPosition(nextPos);
             scheduler.scheduleEvent(this,
                     this.createActivityAction(world, imageStore),
@@ -78,7 +78,13 @@ public class Laser extends Entity implements DynamicEntity, ScheduledEntity{
         }
         else
         {
-            world.moveEntity(this, new Point(21,0));
+            if (withinBounds(nextPos, world)) {
+                Entity hit = world.getOccupancyCell(nextPos);
+                if (hit instanceof Obstacle) {
+                    world.removeEntity(hit);
+                }
+            }
+
             world.removeEntity(this);
             scheduler.unscheduleAllEvents(this);
         }

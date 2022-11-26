@@ -294,7 +294,7 @@ public final class WorldModel
 
         return properties.length == House.HOUSE_NUM_PROPERTIES;
     }
-    private void tryAddEntity(Entity entity) {
+    public void tryAddEntity(Entity entity) {
         if (this.isOccupied(entity.getPosition())) {
             // arguably the wrong type of exception, but we are not
             // defining our own exceptions yet
