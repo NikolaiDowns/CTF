@@ -94,15 +94,15 @@ public final class WorldView
                             entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(2) ||
                             entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(3) )
                     {
-                        this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
-                                (float) (VirtualWorld.p2X +1.0) * this.tileWidth,
-                                (float) (((float) VirtualWorld.p2Y - .5) * this.tileHeight));
+                        this.screen.image(VirtualWorld.imageList.getImageList("leftFlag").get(0),
+                                (float) (VirtualWorld.p2X +.6) * this.tileWidth,
+                                (float) (((float) VirtualWorld.p2Y - .3) * this.tileHeight));
                     }
                     else
                     {
-                        this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
+                        this.screen.image(VirtualWorld.imageList.getImageList("rightFlag").get(0),
                                 (float) VirtualWorld.p2X * this.tileWidth,
-                                (float) (((float) VirtualWorld.p2Y - .5) * this.tileHeight));
+                                (float) (((float) VirtualWorld.p2Y - .3) * this.tileHeight));
                     }
                 }
             }

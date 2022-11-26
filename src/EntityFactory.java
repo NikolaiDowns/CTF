@@ -65,7 +65,7 @@ public final class EntityFactory {
             List<PImage> images)
     {
         LeftSafeZone.createLeftSafeZone(id, position, images, 0, 0,
-                300, 0, 0, 0);
+                200, 0, 0, 0);
         return LeftSafeZone.leftZone;
     }
 
@@ -75,7 +75,7 @@ public final class EntityFactory {
             List<PImage> images)
     {
         RightSafeZone.createRightSafeZone(id, position, images, 0, 0,
-                300, 0, 0, 0);
+                200, 0, 0, 0);
         return RightSafeZone.rightZone;
     }
 
