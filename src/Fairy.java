@@ -53,10 +53,11 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
 
         points = strategy.computePath(this.position, destPos,
                 p ->  withinBounds(p, world)
-                        && p.getY() <= 19
-                        && p.getY() >= 4
-                        && p.getX() >= 8
-                        && p.getX() <= 31,
+//                        && p.getY() <= 19
+//                        && p.getY() >= 4
+//                        && p.getX() >= 8
+//                        && p.getX() <= 31,
+                && world.getBackgroundCell(p).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0),
                 (p1, p2) -> neighbors(p1,p2),
                 PathingStrategy.DIAGONAL_CARDINAL_NEIGHBORS );
         //PathingStrategy.CARDINAL_NEIGHBORS);
