@@ -25,8 +25,8 @@ public class DudeFull extends Dude implements DynamicEntity{
 
     private int score;
 
-    private static final Point myZone = new Point(20,0);
-    private static final Point goalZone = new Point(15,0);
+    private static final Point myZone = new Point(37,12);
+    private static final Point goalZone = new Point(2,12);
 
     public DudeFull(
             String id,
@@ -69,7 +69,6 @@ public class DudeFull extends Dude implements DynamicEntity{
             VirtualWorld.p2Y = 3;
             this.setPosition(new Point((int)VirtualWorld.p2X, (int)VirtualWorld.p2Y));
         }
-
         scheduler.scheduleEvent(this,
                 this.createActivityAction(world, imageStore),
                 this.actionPeriod);

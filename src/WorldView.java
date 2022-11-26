@@ -75,12 +75,36 @@ public final class WorldView
                 this.screen.image(entity.getCurrentImage(),
                         (float)VirtualWorld.p1X * this.tileWidth,
                         (float)VirtualWorld.p1Y * this.tileHeight);
+                if (DudeNotFull.getP1().isHasFlag())
+                {
+                    this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
+                            (float)VirtualWorld.p1X * this.tileWidth,
+                            (float) (((float)VirtualWorld.p1Y -.5) * this.tileHeight));
+                }
             }
             else if( entity instanceof DudeFull)
             {
                 this.screen.image(entity.getCurrentImage(),
                         (float)VirtualWorld.p2X * this.tileWidth,
                         (float)VirtualWorld.p2Y * this.tileHeight);
+                if (DudeFull.getP2().isHasFlag())
+                {
+                    if (entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(0) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(1) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(2) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(3) )
+                    {
+                        this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
+                                (float) (VirtualWorld.p2X +1.0) * this.tileWidth,
+                                (float) (((float) VirtualWorld.p2Y - .5) * this.tileHeight));
+                    }
+                    else
+                    {
+                        this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
+                                (float) VirtualWorld.p2X * this.tileWidth,
+                                (float) (((float) VirtualWorld.p2Y - .5) * this.tileHeight));
+                    }
+                }
             }
 
         }
@@ -133,7 +157,6 @@ public final class WorldView
                         !(world.isOccupied(new Point(i,j+1))) &&
                         !(world.isOccupied(new Point(i,j-1))) )
                 {
-                    System.out.println("make tree");
                     String id = "tree_" + i +"_" + j;
                     Obstacle obs = EntityFactory.createObstacle(
                             id,new Point(i,j), 500,

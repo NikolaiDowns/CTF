@@ -59,6 +59,26 @@ public final class EntityFactory {
         return RightScoreBoard.rightScore;
     }
 
+    public static LeftSafeZone createLeftZone(
+            String id,
+            Point position,
+            List<PImage> images)
+    {
+        LeftSafeZone.createLeftSafeZone(id, position, images, 0, 0,
+                300, 0, 0, 0);
+        return LeftSafeZone.leftZone;
+    }
+
+    public static RightSafeZone createRightZone(
+            String id,
+            Point position,
+            List<PImage> images)
+    {
+        RightSafeZone.createRightSafeZone(id, position, images, 0, 0,
+                300, 0, 0, 0);
+        return RightSafeZone.rightZone;
+    }
+
     // health starts at 0 and builds up until ready to convert to Tree
     public static Sapling createSapling(
             String id,

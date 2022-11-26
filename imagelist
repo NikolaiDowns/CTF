@@ -64,3 +64,7 @@ score3 images/Score3.png
 score4 images/Score4.png
 score5 images/Score5.png
 score6 images/Score6.png
+hasFlag images/hasFlag.png
+noFlag images/noFlag.png
+leftFlag images/leftFlag.png
+rightFlag images/rightFlag.png

@@ -154,7 +154,6 @@ public final class WorldModel
     private boolean parseLeftScoreBoard(
             String[] properties, ImageStore imageStore)
     {
-        System.out.println("there");
         if (properties.length == LeftScoreBoard.LeftScoreBoard_NUM_PROPERTIES) {
             Point pt = new Point(Integer.parseInt(properties[LeftScoreBoard.LeftScoreBoard_COL]),
                     Integer.parseInt(properties[LeftScoreBoard.LeftScoreBoard_ROW]));
@@ -170,7 +169,6 @@ public final class WorldModel
     private boolean parseRightScoreBoard(
             String[] properties, ImageStore imageStore)
     {
-        System.out.println("there");
         if (properties.length == RightScoreBoard.RightScoreBoard_NUM_PROPERTIES) {
             Point pt = new Point(Integer.parseInt(properties[RightScoreBoard.RightScoreBoard_COL]),
                     Integer.parseInt(properties[RightScoreBoard.RightScoreBoard_ROW]));
@@ -181,6 +179,36 @@ public final class WorldModel
         }
 
         return properties.length == RightScoreBoard.RightScoreBoard_NUM_PROPERTIES;
+    }
+
+    private boolean parseLeftSafeZone(
+            String[] properties, ImageStore imageStore)
+    {
+        if (properties.length == LeftSafeZone.LeftSafeZone_NUM_PROPERTIES) {
+            Point pt = new Point(Integer.parseInt(properties[LeftSafeZone.LeftSafeZone_COL]),
+                    Integer.parseInt(properties[LeftSafeZone.LeftSafeZone_ROW]));
+            String id = properties[LeftSafeZone.LeftSafeZone_ID];
+            //int health = Integer.parseInt(properties[Sapling.SAPLING_HEALTH]);
+            LeftSafeZone entity = EntityFactory.createLeftZone(id, pt, imageStore.getImageList("hasFlag"));
+            this.tryAddEntity(entity);
+        }
+
+        return properties.length == LeftSafeZone.LeftSafeZone_NUM_PROPERTIES;
+    }
+
+    private boolean parseRightSafeZone(
+            String[] properties, ImageStore imageStore)
+    {
+        if (properties.length == RightSafeZone.RightSafeZone_NUM_PROPERTIES) {
+            Point pt = new Point(Integer.parseInt(properties[RightSafeZone.RightSafeZone_COL]),
+                    Integer.parseInt(properties[RightSafeZone.RightSafeZone_ROW]));
+            String id = properties[RightSafeZone.RightSafeZone_ID];
+            //int health = Integer.parseInt(properties[Sapling.SAPLING_HEALTH]);
+            RightSafeZone entity = EntityFactory.createRightZone(id, pt, imageStore.getImageList("hasFlag"));
+            this.tryAddEntity(entity);
+        }
+
+        return properties.length == RightSafeZone.RightSafeZone_NUM_PROPERTIES;
     }
 
     private boolean parseDude(
@@ -328,6 +356,10 @@ public final class WorldModel
                     return parseLeftScoreBoard(properties, imageStore);
                 case RightScoreBoard.RightScoreBoard_KEY:
                     return parseRightScoreBoard(properties, imageStore);
+                case LeftSafeZone.LeftSafeZone_KEY:
+                    return parseLeftSafeZone(properties, imageStore);
+                case RightSafeZone.RightSafeZone_KEY:
+                    return parseRightSafeZone(properties, imageStore);
             }
         }
 
