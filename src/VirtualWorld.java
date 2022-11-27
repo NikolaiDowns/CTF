@@ -76,7 +76,9 @@ public final class VirtualWorld extends PApplet
 
         loadImages(IMAGE_LIST_FILE_NAME, imageStore, this);
         loadWorld(world, LOAD_FILE_NAME, imageStore);
-
+        for (int i=0;i<50000;i++) {
+            this.view.growForest();
+        }
         scheduleActions(world, scheduler, imageStore);
 
         nextTime = System.currentTimeMillis() + TIMER_ACTION_PERIOD;
@@ -151,6 +153,7 @@ public final class VirtualWorld extends PApplet
 
     public void keyPressed() {
         if (key == CODED) {
+            DudeFull p2 = DudeFull.getP2();
             switch (keyCode) {
                 case UP:
                     p2Y -= 1;
@@ -159,13 +162,15 @@ public final class VirtualWorld extends PApplet
                     p2Y += 1;
                     break;
                 case LEFT:
+                    p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
                     p2X -= 1;
                     break;
                 case RIGHT:
+                    p2.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
                     p2X += 1;
                     break;
             }
-            DudeFull p2 = DudeFull.getP2();
+
             p2.setPosition(new Point((int)p1X, (int)p1Y));
         }
     }

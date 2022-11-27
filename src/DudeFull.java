@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class DudeFull extends Dude implements DynamicEntity{
+public class DudeFull extends Dude implements DynamicEntity
+{
 
 
     public static final int FULL_PROPERTIES = 6;
@@ -65,8 +66,8 @@ public class DudeFull extends Dude implements DynamicEntity{
         else if(hittingEnemy(world))
         {
             hasFlag = false;
-            VirtualWorld.p2X = 4;
-            VirtualWorld.p2Y = 3;
+            VirtualWorld.p2X = 37;
+            VirtualWorld.p2Y = 12;
             this.setPosition(new Point((int)VirtualWorld.p2X, (int)VirtualWorld.p2Y));
         }
         scheduler.scheduleEvent(this,
@@ -81,19 +82,19 @@ public class DudeFull extends Dude implements DynamicEntity{
         Optional<Entity> nearestSapling =
                 world.findNearest(this.position, new ArrayList<>(Arrays.asList(Sapling.class)));
         Optional<Entity> nearestObstacle =
-                world.findNearest(this.position, new ArrayList<>(Arrays.asList(Obstacle.class, Laser.class)));
+                world.findNearest(this.position, new ArrayList<>(Arrays.asList(Laser.class)));
 
         if(nearestFairy.isPresent() && distance(VirtualWorld.p2X,VirtualWorld.p2Y,
                 (double)nearestFairy.get().getPosition().getX(),
                 (double)nearestFairy.get().getPosition().getY())<1.5)
         {
-            return false;
+            return true;
         }
         else if(nearestObstacle.isPresent() && distance(VirtualWorld.p2X,VirtualWorld.p2Y,
                 (double)nearestObstacle.get().getPosition().getX(),
                 (double)nearestObstacle.get().getPosition().getY())<1)
         {
-            return false;
+            return true;
         }
 
         return false;
@@ -110,5 +111,20 @@ public class DudeFull extends Dude implements DynamicEntity{
     public static void setP2(DudeFull p2) {
         DudeFull.p2 = p2;
     }
+
+//    public static Entity create(String id,
+//                         Point position,
+//                         int actionPeriod,
+//                         int animationPeriod,
+//                         int resourceLimit,
+//                         List<PImage> images)
+//    {
+//        DudeFull player = new DudeFull(id, position, images, resourceLimit, 0,
+//                actionPeriod, animationPeriod, 0, 0);
+//        DudeFull.setP2(player);
+//        VirtualWorld.p2X = ((double)position.getX());
+//        VirtualWorld.p2Y = ((double)position.getY());
+//        return player;
+//    }
 
 }

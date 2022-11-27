@@ -63,8 +63,8 @@ public class DudeNotFull extends Dude implements DynamicEntity{
         else if(hittingEnemy(world))
         {
             hasFlag = false;
-            VirtualWorld.p1X = 4;
-            VirtualWorld.p1Y = 3;
+            VirtualWorld.p1X = 2;
+            VirtualWorld.p1Y = 12;
             this.setPosition(new Point((int)VirtualWorld.p1X, (int)VirtualWorld.p1Y));
         }
 
@@ -81,19 +81,19 @@ public class DudeNotFull extends Dude implements DynamicEntity{
         Optional<Entity> nearestSapling =
                 world.findNearest(this.position, new ArrayList<>(Arrays.asList(Sapling.class)));
         Optional<Entity> nearestObstacle =
-                world.findNearest(this.position, new ArrayList<>(Arrays.asList(Obstacle.class, Laser.class)));
+                world.findNearest(this.position, new ArrayList<>(Arrays.asList(Laser.class)));
 
         if(nearestFairy.isPresent() && distance(VirtualWorld.p1X,VirtualWorld.p1Y,
                 (double)nearestFairy.get().getPosition().getX(),
                 (double)nearestFairy.get().getPosition().getY())<1.5)
         {
-            return false;
+            return true;
         }
         else if(nearestObstacle.isPresent() && distance(VirtualWorld.p1X,VirtualWorld.p1Y,
                 (double)nearestObstacle.get().getPosition().getX(),
                 (double)nearestObstacle.get().getPosition().getY())<1)
         {
-            return false;
+            return true;
         }
 
         return false;
