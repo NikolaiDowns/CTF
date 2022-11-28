@@ -77,9 +77,21 @@ public final class WorldView
                         (float)VirtualWorld.p1Y * this.tileHeight);
                 if (DudeNotFull.getP1().isHasFlag())
                 {
-                    this.screen.image(VirtualWorld.imageList.getImageList("flag").get(0),
-                            (float)VirtualWorld.p1X * this.tileWidth,
-                            (float) (((float)VirtualWorld.p1Y -.5) * this.tileHeight));
+                    if (entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(0) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(1) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(2) ||
+                            entity.getCurrentImage() == VirtualWorld.imageList.getImageList("sapling").get(3) )
+                    {
+                        this.screen.image(VirtualWorld.imageList.getImageList("leftFlag").get(0),
+                                (float) (VirtualWorld.p1X +.6) * this.tileWidth,
+                                (float) (((float) VirtualWorld.p1Y - .3) * this.tileHeight));
+                    }
+                    else
+                    {
+                        this.screen.image(VirtualWorld.imageList.getImageList("rightFlag").get(0),
+                                (float) VirtualWorld.p1X * this.tileWidth,
+                                (float) (((float) VirtualWorld.p1Y - .3) * this.tileHeight));
+                    }
                 }
             }
             else if( entity instanceof DudeFull)
@@ -129,7 +141,7 @@ public final class WorldView
         }
     }
 
-    private void growForest()
+    public void growForest()
     {
         growForestSection(8,31,4,19,500000);
         growForestSection(8,31,4,8,300000);

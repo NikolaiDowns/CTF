@@ -104,7 +104,7 @@ public final class WorldModel
         this.occupancy[pos.getY()][pos.getX()] = entity;
     }
 
-    private Background getBackgroundCell(Point pos) {
+    public Background getBackgroundCell(Point pos) {
         return this.background[pos.getY()][pos.getX()];
     }
 
@@ -235,6 +235,7 @@ public final class WorldModel
                     Integer.parseInt(properties[DudeFull.FULL_ANIMATION_PERIOD]),
                     0,
                     imageStore.getImageList(Dude.DUDE_KEY));
+            //DudeFull entity = Dude
             this.tryAddEntity(entity);
         }
 
