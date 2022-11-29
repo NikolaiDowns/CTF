@@ -19,4 +19,5 @@ public class Stump extends Entity{
         super(id, position, images, resourceLimit, resourceCount, actionPeriod,
                 animationPeriod, health, healthLimit);
     }
+
 }

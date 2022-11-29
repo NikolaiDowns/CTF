@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+// make zombieFactory <>
+// Easy zombie factory
+// Medium Zombie Factory
+// Hard Zombie Factory
+//
+
 
 public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
 
@@ -15,6 +21,7 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
     public static final int FAIRY_ANIMATION_PERIOD = 4;
 
     private PathingStrategy strategy = new AStarPathingStrategy();
+     // private PathingStrategy strategy = new DijkstraPathingStrategy();
     public static final int FAIRY_ACTION_PERIOD = 5;
 
     public Fairy(       String id,

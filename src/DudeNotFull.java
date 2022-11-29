@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class DudeNotFull extends Dude implements DynamicEntity{
+public class DudeNotFull extends Dude implements DynamicEntity
+{
 
     public static final int NOT_FULL_PROPERTIES = 7;
     public static final int NOT_FULL_LIMIT = 4;

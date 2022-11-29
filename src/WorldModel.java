@@ -79,7 +79,7 @@ public final class WorldModel
         }
     }
 
-    private void setBackground(Point pos, Background background)
+    public void setBackground(Point pos, Background background)
     {
         if (withinBounds(pos)) {
             this.setBackgroundCell(pos, background);

@@ -45,6 +45,7 @@ public class RightSafeZone extends Entity implements ScheduledEntity, DynamicEnt
         }
     }
 
+
     public void executeActivity(
             WorldModel world,
             ImageStore imageStore,

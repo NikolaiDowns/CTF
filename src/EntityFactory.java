@@ -4,6 +4,20 @@ import java.util.List;
 
 public final class EntityFactory {
 
+//    public static Entity createEntity(String entityType)
+//    {
+//        if(entityType != null)
+//        {
+//            switch(entityType)
+//            {
+//                case "DudeFull":
+//
+//            }
+//        }
+//    }
+
+    // Enemy Factory creates zombie or cannon
+
     public static House createHouse(
             String id, Point position, int actionPeriod, List<PImage> images)
     {
@@ -79,7 +93,7 @@ public final class EntityFactory {
         return RightSafeZone.rightZone;
     }
 
-    // health starts at 0 and builds up until ready to convert to Tree
+//     health starts at 0 and builds up until ready to convert to Tree
     public static Sapling createSapling(
             String id,
             Point position,
@@ -112,7 +126,7 @@ public final class EntityFactory {
                 actionPeriod, animationPeriod, 0, 0);
     }
 
-    // need resource count, though it always starts at 0
+//     need resource count, though it always starts at 0
     public static DudeNotFull createDudeNotFull(
             String id,
             Point position,
@@ -129,7 +143,7 @@ public final class EntityFactory {
         return player;
     }
 
-    // don't technically need resource count ... full
+ //    don't technically need resource count ... full
     public static DudeFull createDudeFull(
             String id,
             Point position,

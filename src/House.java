@@ -30,7 +30,6 @@ public class House extends Entity implements DynamicEntity, ScheduledEntity
             super(id, position, images, resourceLimit, resourceCount, actionPeriod,
                     animationPeriod, health, healthLimit);
         }
-
     public void executeActivity(
             WorldModel world,
             ImageStore imageStore,

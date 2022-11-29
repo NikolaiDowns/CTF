@@ -3,7 +3,8 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Random;
 
-public class Sapling extends Plant implements DynamicEntity{
+public class Sapling extends Plant implements DynamicEntity
+{
 
     public static final String SAPLING_KEY = "sapling";
     public static final int SAPLING_HEALTH_LIMIT = 5;

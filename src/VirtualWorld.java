@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Optional;
 
@@ -95,34 +97,110 @@ public final class VirtualWorld extends PApplet
         DudeFull p2 = DudeFull.getP2();
 
         switch (key) {
+//            case 'w':
+//                Point potential = new Point(p1.getPosition().getX(),p1.getPosition().getY() - 1);
+//                if (this.world.isOccupied(potential)
+//                && !(this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightScoreBoard));
+//                p1Y -= .5;
+//                break;
+//            case 's':
+//                potential = new Point(p1.getPosition().getX(),p1.getPosition().getY() + 1);
+//                if (this.world.isOccupied(potential)
+//                        && !(this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightScoreBoard));
+//                p1Y += .5;
+//                break;
+//            case 'a':
+//                potential = new Point(p1.getPosition().getX() - 1,p1.getPosition().getY());
+//                if (this.world.isOccupied(potential)
+//                        && !(this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightScoreBoard));
+//                p1X -= .5;
+//                break;
+//            case 'd':
+//                potential = new Point(p1.getPosition().getX() + 1,p1.getPosition().getY());
+//                if (this.world.isOccupied(potential)
+//                        && !(this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+//                        !(this.world.getOccupancyCell(potential) instanceof RightScoreBoard));
+//                p1X += .5;
+//                break;
+
             case 'w':
-                p1Y -= .5;
+                try {
+                    Point potential = new Point(p1.getPosition().getX(),p1.getPosition().getY() - 1);
+                    if (!(this.world.isOccupied(potential) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                    p1Y -= .5;
+                    p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    p1Y += .5;
+                    System.out.println("out of bounds");
+                }
                 break;
             case 's':
-                p1Y += .5;
+                try {
+                    int currY = p1.getPosition().getY() + 1;
+                    if (currY > 23) {
+                        currY = 100;
+                    }
+                    Point potential = new Point(p1.getPosition().getX(), currY);
+                    if (!(this.world.isOccupied(potential) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                    p1Y += .5;
+                    p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    p1Y -= .5;
+                    System.out.println("out of bounds");
+                }
                 break;
             case 'a':
+                try{
+                    Point potential = new Point(p1.getPosition().getX() - 1,p1.getPosition().getY());
+                    if (!(this.world.isOccupied(potential) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
                 p1X -= .5;
                 p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    System.out.println("out of bounds");
+                    p1X += .5;
+                }
                 break;
             case 'd':
+                try{
+                    Point potential = new Point(p1.getPosition().getX() + 1,p1.getPosition().getY());
+                    if (!(this.world.isOccupied(potential) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
                 p1X += .5;
                 p1.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
-                break;
-
-            case 'i':
-                p2Y -= .5;
-                break;
-            case 'k':
-                p2Y += .5;
-                break;
-            case 'j':
-                p2X -= .5;
-                p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
-                break;
-            case 'l':
-                p2X += .5;
-                p2.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    System.out.println("out of bounds");
+                    p1X -= .5;
+                }
                 break;
         }
 
@@ -136,7 +214,16 @@ public final class VirtualWorld extends PApplet
     public void mousePressed() {
         Point pressed = mouseToPoint(mouseX, mouseY);
         System.out.println("CLICK! " + pressed.getX() + ", " + pressed.getY());
-
+        List<Point> neighbors = VirtualWorld.getNeighbors(pressed);
+        neighbors.add(pressed);
+        for (Point p : neighbors)
+        {
+            if (this.withinBounds(p))
+            {
+                // set background to be forest
+                this.world.setBackground(p, new Background("forest", imageStore.getImageList("forest")));
+            }
+        }
         Optional<Entity> entityOptional = world.getOccupant(pressed);
         if (entityOptional.isPresent())
         {
@@ -245,7 +332,25 @@ public final class VirtualWorld extends PApplet
             }
         }
     }
+    private static List<Point> getNeighbors(Point p1)
+    {
+        List<Point> neighbors = new ArrayList<>();
+        neighbors.add(new Point(p1.getX() + 1, p1.getY()));
+        neighbors.add(new Point(p1.getX() - 1, p1.getY()));
+        neighbors.add(new Point(p1.getX() + 1, p1.getY() + 1));
+        neighbors.add(new Point(p1.getX() + 1, p1.getY() - 1));
+        neighbors.add(new Point(p1.getX() - 1, p1.getY() + 1));
+        neighbors.add(new Point(p1.getX() - 1, p1.getY() - 1));
+        neighbors.add(new Point(p1.getX(), p1.getY() + 1));
+        neighbors.add(new Point(p1.getX(), p1.getY() - 1));
 
+        return neighbors;
+    }
+
+    private boolean withinBounds(Point pos) {
+        return pos.getY() >= 0 && pos.getY() < this.world.getNumRows() && pos.getX() >= 0
+                && pos.getX() < this.world.getNumCols();
+    }
     public static void main(String[] args) {
         parseCommandLine(args);
         PApplet.main(VirtualWorld.class);
