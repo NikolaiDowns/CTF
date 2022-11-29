@@ -137,11 +137,17 @@ public final class VirtualWorld extends PApplet
             case 'w':
                 try {
                     Point potential = new Point(p1.getPosition().getX(),p1.getPosition().getY() - 1);
-                    if (!(this.world.isOccupied(potential) ||
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
                             (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
-                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
                     p1Y -= .5;
                     p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
                 }
@@ -157,11 +163,17 @@ public final class VirtualWorld extends PApplet
                         currY = 100;
                     }
                     Point potential = new Point(p1.getPosition().getX(), currY);
-                    if (!(this.world.isOccupied(potential) ||
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
                             (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
-                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
                     p1Y += .5;
                     p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
                 }
@@ -173,11 +185,17 @@ public final class VirtualWorld extends PApplet
             case 'a':
                 try{
                     Point potential = new Point(p1.getPosition().getX() - 1,p1.getPosition().getY());
-                    if (!(this.world.isOccupied(potential) ||
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
                             (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
-                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
                 p1X -= .5;
                 p1.setImages(imageStore.getImageList(Dude.DUDE_KEY));
                 }
@@ -189,11 +207,17 @@ public final class VirtualWorld extends PApplet
             case 'd':
                 try{
                     Point potential = new Point(p1.getPosition().getX() + 1,p1.getPosition().getY());
-                    if (!(this.world.isOccupied(potential) ||
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
                             (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
                             (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
-                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard)))
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
                 p1X += .5;
                 p1.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
                 }
@@ -202,8 +226,99 @@ public final class VirtualWorld extends PApplet
                     p1X -= .5;
                 }
                 break;
+            case 'i':
+                try {
+                    Point potential = new Point(p2.getPosition().getX(),p2.getPosition().getY() - 1);
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
+                        p2Y -= .5;
+                    p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    p2Y += .5;
+                    System.out.println("out of bounds");
+                }
+                break;
+            case 'k':
+                try {
+                    int currY = p2.getPosition().getY() + 1;
+                    if (currY > 23) {
+                        currY = 100;
+                    }
+                    Point potential = new Point(p2.getPosition().getX(), currY);
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
+                        p2Y += .5;
+                    p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    p2Y -= .5;
+                    System.out.println("out of bounds");
+                }
+                break;
+            case 'j':
+                try{
+                    Point potential = new Point(p2.getPosition().getX() - 1,p2.getPosition().getY());
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
+                        p2X -= .5;
+                    p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    System.out.println("out of bounds");
+                    p2X += .5;
+                }
+                break;
+            case 'l':
+                try{
+                    Point potential = new Point(p2.getPosition().getX() + 1, p2.getPosition().getY());
+                    if ((potential.getX() == 1 && potential.getY() == 11) ||
+                            (potential.getX() == 2 && potential.getY() == 12) ||
+                            (potential.getX() == 37 && potential.getY() == 12) ||
+                            (potential.getX() == 36 && potential.getY() == 11) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                            (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                            (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                            (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                            !(this.world.isOccupied(potential))
+                    )
+                        p2X += .5;
+                    p2.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
+                }
+                catch(ArrayIndexOutOfBoundsException e){
+                    System.out.println("out of bounds");
+                    p2X -= .5;
+                }
+                break;
         }
-
         p1.setPosition(new Point((int)p1X, (int)p1Y));
         p2.setPosition(new Point((int)p2X, (int)p2Y));
         key = ' ';
@@ -243,18 +358,96 @@ public final class VirtualWorld extends PApplet
             DudeFull p2 = DudeFull.getP2();
             switch (keyCode) {
                 case UP:
-                    p2Y -= 1;
+                    try {
+                        Point potential = new Point(p2.getPosition().getX(),p2.getPosition().getY() - 1);
+                        if ((potential.getX() == 1 && potential.getY() == 11) ||
+                                (potential.getX() == 2 && potential.getY() == 12) ||
+                                (potential.getX() == 37 && potential.getY() == 12) ||
+                                (potential.getX() == 36 && potential.getY() == 11) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                                (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                                (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                                !(this.world.isOccupied(potential))
+                        )
+                            p2Y -= 1;
+                        p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                    }
+                    catch(ArrayIndexOutOfBoundsException e){
+                        p2Y += 1;
+                        System.out.println("out of bounds");
+                    }
                     break;
                 case DOWN:
-                    p2Y += 1;
+                    try {
+                        int currY = p2.getPosition().getY() + 1;
+                        if (currY > 23) {
+                            currY = 100;
+                        }
+                        Point potential = new Point(p2.getPosition().getX(), currY);
+                        if ((potential.getX() == 1 && potential.getY() == 11) ||
+                                (potential.getX() == 2 && potential.getY() == 12) ||
+                                (potential.getX() == 37 && potential.getY() == 12) ||
+                                (potential.getX() == 36 && potential.getY() == 11) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                                (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                                (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                                !(this.world.isOccupied(potential))
+                        )
+                            p2Y += 1;
+                        p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                    }
+                    catch(ArrayIndexOutOfBoundsException e){
+                        p2Y -= 1;
+                        System.out.println("out of bounds");
+                    }
                     break;
                 case LEFT:
-                    p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
-                    p2X -= 1;
+                    try{
+                        Point potential = new Point(p2.getPosition().getX() - 1,p2.getPosition().getY());
+                        if ((potential.getX() == 1 && potential.getY() == 11) ||
+                                (potential.getX() == 2 && potential.getY() == 12) ||
+                                (potential.getX() == 37 && potential.getY() == 12) ||
+                                (potential.getX() == 36 && potential.getY() == 11) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                                (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                                (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                                !(this.world.isOccupied(potential))
+                        )
+                            p2X -= 1;
+                        p2.setImages(imageStore.getImageList(Dude.DUDE_KEY));
+                    }
+                    catch(ArrayIndexOutOfBoundsException e){
+                        System.out.println("out of bounds");
+                        p2X += 1;
+                    }
                     break;
                 case RIGHT:
-                    p2.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
-                    p2X += 1;
+                    try{
+                        Point potential = new Point(p2.getPosition().getX() + 1, p2.getPosition().getY());
+                        if ((potential.getX() == 1 && potential.getY() == 11) ||
+                                (potential.getX() == 2 && potential.getY() == 12) ||
+                                (potential.getX() == 37 && potential.getY() == 12) ||
+                                (potential.getX() == 36 && potential.getY() == 11) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof LeftSafeZone)||
+                                (this.world.getOccupancyCell(potential) instanceof RightSafeZone) ||
+                                (this.world.getOccupancyCell(potential) instanceof RightScoreBoard) ||
+                                (this.world.getOccupancyCell(potential) instanceof DudeNotFull) ||
+                                !(this.world.isOccupied(potential))
+                        )
+                            p2X += 1;
+                        p2.setImages(imageStore.getImageList(Sapling.SAPLING_KEY));
+                    }
+                    catch(ArrayIndexOutOfBoundsException e){
+                        System.out.println("out of bounds");
+                        p2X -= 1;
+                    }
                     break;
             }
 
