@@ -115,6 +115,17 @@ public final class EntityFactory {
 //                actionPeriod, animationPeriod, 0, 0);
 //    }
 
+    public static Slime createSlime(
+            String id,
+            Point position,
+            int actionPeriod,
+            int animationPeriod,
+            List<PImage> images)
+    {
+        return new Slime(id, position, images, 0, 0,
+                actionPeriod, animationPeriod, 0, 0,new SingleStepPathingStrategy());
+    }
+
     public static Laser createLaser(
             String id,
             Point position,

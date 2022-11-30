@@ -14,7 +14,21 @@ public abstract class Entity
     private int imageIndex;
     protected int resourceLimit;
     protected int resourceCount;
+
+    public int getActionPeriod() {
+        return actionPeriod;
+    }
+
+    public void setActionPeriod(int actionPeriod) {
+        this.actionPeriod = actionPeriod;
+    }
+
     protected int actionPeriod;
+
+    public void setAnimationPeriod(int animationPeriod) {
+        this.animationPeriod = animationPeriod;
+    }
+
     protected int animationPeriod;
     protected int health;
     protected int healthLimit;

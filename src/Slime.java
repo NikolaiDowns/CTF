@@ -11,65 +11,47 @@ import java.util.Optional;
 //
 
 
-public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
+public class Slime extends Entity implements DynamicEntity, ScheduledEntity{
 
-    public static final String FAIRY_KEY = "fairy";
-    public static final int FAIRY_NUM_PROPERTIES = 6;
-    public static final int FAIRY_ID = 1;
-    public static final int FAIRY_COL = 2;
-    public static final int FAIRY_ROW = 3;
-    public static final int FAIRY_ANIMATION_PERIOD = 4;
-
-    public PathingStrategy getStrategy() {
-        return strategy;
-    }
-
-    public void setStrategy(PathingStrategy strategy) {
-        this.strategy = strategy;
-    }
+//    public static final String SLIME_KEY = "fairy";
+//    public static final int FAIRY_NUM_PROPERTIES = 6;
+//    public static final int FAIRY_ID = 1;
+//    public static final int FAIRY_COL = 2;
+//    public static final int FAIRY_ROW = 3;
+//    public static final int FAIRY_ANIMATION_PERIOD = 4;
 
     private PathingStrategy strategy;
 
-    public boolean isDumb() {
-        return dumb;
-    }
-
-    public void setDumb(boolean dumb) {
-        this.dumb = dumb;
-    }
-
-    private boolean dumb;
-
     //private PathingStrategy strategy = new AStarPathingStrategy();
-     // private PathingStrategy strategy = new DijkstraPathingStrategy();
-    public static final int FAIRY_ACTION_PERIOD = 5;
+    // private PathingStrategy strategy = new DijkstraPathingStrategy();
+    public static final int SLIME_ACTION_PERIOD = 5;
 
-    public Fairy(       String id,
-                       Point position,
-                       List<PImage> images,
-                       int resourceLimit,
-                       int resourceCount,
-                       int actionPeriod,
-                       int animationPeriod,
-                       int health,
-                       int healthLimit,
+    public Slime(       String id,
+                        Point position,
+                        List<PImage> images,
+                        int resourceLimit,
+                        int resourceCount,
+                        int actionPeriod,
+                        int animationPeriod,
+                        int health,
+                        int healthLimit,
                         PathingStrategy strategy)
     {
         super(id, position, images, resourceLimit, resourceCount, actionPeriod,
                 animationPeriod, health, healthLimit);
         this.strategy = strategy;
-        this.dumb = false;
     }
     public void executeActivity(
             WorldModel world,
             ImageStore imageStore,
             EventScheduler scheduler)
     {
-        Optional<Entity> fairyTarget =
+
+        Optional<Entity> slimeTarget =
                 world.findNearest(this.position, new ArrayList<>(Arrays.asList(DudeNotFull.class, DudeFull.class)));
 
-        if (fairyTarget.isPresent()) {
-            this.moveToFairy(world, fairyTarget.get(), scheduler);
+        if (slimeTarget.isPresent()) {
+            this.moveToSlime(world, slimeTarget.get(), scheduler);
         }
 
         scheduler.scheduleEvent(this,
@@ -77,7 +59,7 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
                 this.actionPeriod);
     }
 
-    private Point nextPositionFairy(WorldModel world, Point destPos)
+    private Point nextPositionSlime(WorldModel world, Point destPos)
     {
         List<Point> points;
 
@@ -87,7 +69,7 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
 //                        && p.getY() >= 4
 //                        && p.getX() >= 8
 //                        && p.getX() <= 31,
-                && world.getBackgroundCell(p).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0),
+                        && world.getBackgroundCell(p).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0),
                 (p1, p2) -> neighbors(p1,p2),
                 PathingStrategy.DIAGONAL_CARDINAL_NEIGHBORS );
         //PathingStrategy.CARDINAL_NEIGHBORS);
@@ -114,42 +96,31 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
     }
 
 
-    private void moveToFairy(WorldModel world, Entity target, EventScheduler scheduler)
+    private void moveToSlime(WorldModel world, Entity target, EventScheduler scheduler)
     {
 //        if (this.position.adjacent(target.position)) {
 ////            world.removeEntity(target);
 ////            scheduler.unscheduleAllEvents(target);
 //            return;
 //        }
-        Point nextPos = this.nextPositionFairy(world, target.position);
-            if (!this.position.equals(nextPos) && !(world.isOccupied(nextPos))) {
+        Point nextPos = this.nextPositionSlime(world, target.position);
+        if (!this.position.equals(nextPos) && !(world.isOccupied(nextPos))) {
 //                Optional<Entity> occupant = world.getOccupant(nextPos);
 //                if (occupant.isPresent()) {
 //                    scheduler.unscheduleAllEvents(occupant.get());
 //                }
-                if (nextPos.getX() < position.getX())
-                {
-                    if(dumb)
-                    {
-                        images = VirtualWorld.imageList.getImageList("RightZombie");
-                    }
-                    else {
-                        images = VirtualWorld.imageList.getImageList("LeftZombie");
-                    }
-                }
-                else
-                {
-                    if(dumb)
-                    {
-                        images = VirtualWorld.imageList.getImageList("LeftZombie");
-                    }
-                    else {
-                        images = VirtualWorld.imageList.getImageList("RightZombie");
-                    }
-                }
+            if (nextPos.getX() < position.getX())
+            {
 
-                world.moveEntity(this, nextPos);
+                images = VirtualWorld.imageList.getImageList("LeftZombie");
             }
+            else
+            {
+                images = VirtualWorld.imageList.getImageList("RightZombie");
+            }
+
+            world.moveEntity(this, nextPos);
+        }
     }
 
     public void scheduleActions(

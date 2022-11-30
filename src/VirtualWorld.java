@@ -1,10 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Optional;
+import java.util.*;
 
 import processing.core.*;
 
@@ -101,23 +98,48 @@ public final class VirtualWorld extends PApplet
                 gameScreen = 1;
                 // Make zombieFactory easy
                 ff = new HardFairyFactory();
-                Fairy entityEasy = ff.createFairy("fairy", new Point( 10, 10),
-                        800,
-                        51,
-                        imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
-                world.tryAddEntity(entityEasy);
-                ((ScheduledEntity)entityEasy).scheduleActions(scheduler, world, imageStore);
+                Random random = new Random();
+                int fairyX = random.nextInt(39);
+                int fairyY = random.nextInt(24);
+                for(int i=0;i<0;i++)
+                {
+                    while(world.isOccupied(new Point (fairyX,fairyY)))
+                    {
+                        fairyX = random.nextInt(10,27);
+                        fairyY = random.nextInt(6,17);
+                    }
+                    Fairy entityEasy = ff.createFairy("fairy", new Point( fairyX, fairyY),
+                            800,
+                            51,
+                            imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
+                    world.tryAddEntity(entityEasy);
+                    ((ScheduledEntity)entityEasy).scheduleActions(scheduler, world, imageStore);
+                }
+
+
                 break;
             case '2':
                 gameScreen = 1;
+                // Make zombieFactory easy
                 ff = new HardFairyFactory();
-                // Make zombieFactory hard
-                Fairy entityHard = ff.createFairy("fairy", new Point( 12, 17),
-                        800,
-                        51,
-                        imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
-                world.tryAddEntity(entityHard);
-                ((ScheduledEntity)entityHard).scheduleActions(scheduler, world, imageStore);
+                Random random1 = new Random();
+                int fairyX1 = random1.nextInt(39);
+                int fairyY1 = random1.nextInt(24);
+                for(int i=0;i<5;i++)
+                {
+                    while(world.isOccupied(new Point (fairyX1,fairyY1)))
+                    {
+                        fairyX1 = random1.nextInt(10,27);
+                        fairyY1 = random1.nextInt(6,17);
+                    }
+                    Fairy entityEasy = ff.createFairy("fairy", new Point( fairyX1, fairyY1),
+                            800,
+                            51,
+                            imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
+                    world.tryAddEntity(entityEasy);
+                    ((ScheduledEntity)entityEasy).scheduleActions(scheduler, world, imageStore);
+                }
+
                 break;
         }
     }
@@ -377,6 +399,24 @@ public final class VirtualWorld extends PApplet
         {
             Entity entity = entityOptional.get();
             System.out.println(entity.getId() + ": " + entity.getClass() + " : " + entity.getHealth());
+        }
+        else {
+            Slime slime = EntityFactory.createSlime("fairy", pressed,
+                    800,
+                    51,
+                    imageStore.getImageList("RightZombie"));
+            world.tryAddEntity(slime);
+            ((ScheduledEntity)slime).scheduleActions(scheduler, world, imageStore);
+        }
+        Optional<Entity> nearestFairy =
+                world.findNearest(pressed, new ArrayList<>(Arrays.asList(Fairy.class)));
+
+        if(nearestFairy.isPresent())
+        {
+            nearestFairy.get().setActionPeriod(1600);
+            nearestFairy.get().setAnimationPeriod(400);
+            ((Fairy)nearestFairy.get()).setStrategy(new SingleStepPathingStrategy());
+            ((Fairy)nearestFairy.get()).setDumb(true);
         }
 
     }
