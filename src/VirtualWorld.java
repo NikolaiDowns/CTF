@@ -101,7 +101,7 @@ public final class VirtualWorld extends PApplet
                 Random random = new Random();
                 int fairyX = random.nextInt(39);
                 int fairyY = random.nextInt(24);
-                for(int i=0;i<0;i++)
+                for(int i=0;i<3;i++)
                 {
                     while(world.isOccupied(new Point (fairyX,fairyY)))
                     {
@@ -404,7 +404,7 @@ public final class VirtualWorld extends PApplet
             Slime slime = EntityFactory.createSlime("fairy", pressed,
                     800,
                     51,
-                    imageStore.getImageList("RightZombie"));
+                    imageStore.getImageList("leftSlime"));
             world.tryAddEntity(slime);
             ((ScheduledEntity)slime).scheduleActions(scheduler, world, imageStore);
         }

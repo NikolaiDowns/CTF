@@ -64,12 +64,12 @@ public class Slime extends Entity implements DynamicEntity, ScheduledEntity{
         List<Point> points;
 
         points = strategy.computePath(this.position, destPos,
-                p ->  withinBounds(p, world)
+                p ->  withinBounds(p, world),
 //                        && p.getY() <= 19
 //                        && p.getY() >= 4
 //                        && p.getX() >= 8
 //                        && p.getX() <= 31,
-                        && world.getBackgroundCell(p).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0),
+                        //&& world.getBackgroundCell(p).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0),
                 (p1, p2) -> neighbors(p1,p2),
                 PathingStrategy.DIAGONAL_CARDINAL_NEIGHBORS );
         //PathingStrategy.CARDINAL_NEIGHBORS);
@@ -112,11 +112,11 @@ public class Slime extends Entity implements DynamicEntity, ScheduledEntity{
             if (nextPos.getX() < position.getX())
             {
 
-                images = VirtualWorld.imageList.getImageList("LeftZombie");
+                images = VirtualWorld.imageList.getImageList("leftSlime");
             }
             else
             {
-                images = VirtualWorld.imageList.getImageList("RightZombie");
+                images = VirtualWorld.imageList.getImageList("rightSlime");
             }
 
             world.moveEntity(this, nextPos);
