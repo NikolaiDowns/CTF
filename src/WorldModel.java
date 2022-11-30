@@ -248,7 +248,7 @@ public final class WorldModel
         if (properties.length == Fairy.FAIRY_NUM_PROPERTIES) {
             Point pt = new Point(Integer.parseInt(properties[Fairy.FAIRY_COL]),
                     Integer.parseInt(properties[Fairy.FAIRY_ROW]));
-            Fairy entity = EntityFactory.createFairy(properties[Fairy.FAIRY_ID],
+            Fairy entity = VirtualWorld.ff.createFairy(properties[Fairy.FAIRY_ID],
                     pt,
                     Integer.parseInt(properties[Fairy.FAIRY_ACTION_PERIOD]),
                     Integer.parseInt(properties[Fairy.FAIRY_ANIMATION_PERIOD]),

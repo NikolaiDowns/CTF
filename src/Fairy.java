@@ -20,7 +20,9 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
     public static final int FAIRY_ROW = 3;
     public static final int FAIRY_ANIMATION_PERIOD = 4;
 
-    private PathingStrategy strategy = new AStarPathingStrategy();
+    private PathingStrategy strategy;
+
+    //private PathingStrategy strategy = new AStarPathingStrategy();
      // private PathingStrategy strategy = new DijkstraPathingStrategy();
     public static final int FAIRY_ACTION_PERIOD = 5;
 
@@ -32,16 +34,19 @@ public class Fairy extends Entity implements DynamicEntity, ScheduledEntity{
                        int actionPeriod,
                        int animationPeriod,
                        int health,
-                       int healthLimit)
+                       int healthLimit,
+                        PathingStrategy strategy)
     {
         super(id, position, images, resourceLimit, resourceCount, actionPeriod,
                 animationPeriod, health, healthLimit);
+        this.strategy = strategy;
     }
     public void executeActivity(
             WorldModel world,
             ImageStore imageStore,
             EventScheduler scheduler)
     {
+        System.out.println("herre");
         Optional<Entity> fairyTarget =
                 world.findNearest(this.position, new ArrayList<>(Arrays.asList(DudeNotFull.class, DudeFull.class)));
 
