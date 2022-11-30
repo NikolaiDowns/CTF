@@ -31,11 +31,10 @@ class DijkstraPathingStrategy
         DijkstraNode startNode = new DijkstraNode(start,null, 0);
         HashMap<Point, DijkstraNode> pointData = new HashMap<>();
 
-        // Begin A* Algorithm
+        // Begin Dijkstras Algorithm
         openList.add(startNode);
 
-        while(openList.size() > 0)
-        {
+        while(openList.size() > 0) {
             DijkstraNode curr = openList.poll();
 
             // Check if current DijkstraNode is within reach of target point.
@@ -54,25 +53,35 @@ class DijkstraPathingStrategy
             List<DijkstraNode> neighborDijkstraNodes = neighborPoints
                     .filter(p -> !(closedList.contains(p))) // filter out points in closed list already
                     .map(p -> new DijkstraNode(p, curr, // create neighbor DijkstraNodes
-                            curr.getG() + 1))
+                            1000000))
                     .collect(Collectors.toList());
 
-            for (DijkstraNode n : neighborDijkstraNodes)
-            {
-                if (pointData.containsKey(n.getPoint())) // Checking if DijkstraNode has been a neighbor before
+
+            for (DijkstraNode n : neighborDijkstraNodes) {
+                if (!(closedList.contains(n.getPoint()))) // Checking if DijkstraNode has been a neighbor before
                 {
-                    DijkstraNode prev = pointData.get(n.getPoint());
-                    if (prev.getG() > n.getG()) // Checking if G value has improved in this iteration
+                    curr.setNeighbor(n, n.getG());
+                    if (pointData.containsKey(n.getPoint()))
                     {
+                        DijkstraNode prevNode = pointData.get(n.getPoint());
+                        if (curr.getG() + 1 < prevNode.getG())
+                        {
+                            openList.remove(prevNode);
+                            n.setG(curr.getG() + 1);
+                            curr.setNeighbor(n, n.getG());
+                            openList.add(n);
+                            pointData.remove(prevNode.getPoint());
+                            pointData.put(n.getPoint(), n);
+                        }
+                    }
+                    else
+                    {
+                        n.setG(curr.getG() + 1);
+                        curr.setNeighbor(n, n.getG());
+                        openList.add(n);
                         pointData.put(n.getPoint(), n);
-                        openList.remove(prev); // updating dictonary with DijkstraNode's new G value
                     }
                 }
-                else
-                {
-                    pointData.put(n.getPoint(), n);
-                }
-                openList.add(n); // Adding neighbor DijkstraNode to queue
             }
             closedList.add(curr.getPoint()); // Adding current point to the closed list.
         }
