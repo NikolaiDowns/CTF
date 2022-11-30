@@ -13,7 +13,7 @@ public class DijkstraNode implements Comparable<DijkstraNode>{
         this.g = g;
         this.p = p;
         this.prior = prior;
-//        this.neighbors = new HashMap<DijkstraNode, Integer>();
+        this.neighbors = new HashMap<DijkstraNode, Integer>();
     }
 
     public int getG() {
