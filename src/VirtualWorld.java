@@ -90,14 +90,14 @@ public final class VirtualWorld extends PApplet
     void initScreen() {
         background(0);
         textAlign(CENTER);
-        text("Click on Screen then: 1 = Easy, 2 = Hard", height/2, width/2);
+        text("Click on Screen then: 1 = Easy, 2 = Hard", height/2 + 5, width/2);
 
         switch (key)
         {
             case '1':
                 gameScreen = 1;
                 // Make zombieFactory easy
-                ff = new HardFairyFactory();
+                ff = new EasyFairyFactory();
                 Random random = new Random();
                 int fairyX = random.nextInt(39);
                 int fairyY = random.nextInt(24);
@@ -109,7 +109,7 @@ public final class VirtualWorld extends PApplet
                         fairyY = random.nextInt(6,17);
                     }
                     Fairy entityEasy = ff.createFairy("fairy", new Point( fairyX, fairyY),
-                            800,
+                            1000,
                             51,
                             imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
                     world.tryAddEntity(entityEasy);
@@ -120,7 +120,7 @@ public final class VirtualWorld extends PApplet
                 break;
             case '2':
                 gameScreen = 1;
-                // Make zombieFactory easy
+                // Make zombieFactory hard
                 ff = new HardFairyFactory();
                 Random random1 = new Random();
                 int fairyX1 = random1.nextInt(39);
