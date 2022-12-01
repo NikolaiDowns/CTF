@@ -123,7 +123,7 @@ public final class EntityFactory {
             List<PImage> images)
     {
         return new Slime(id, position, images, 0, 0,
-                actionPeriod, animationPeriod, 0, 0,new SingleStepPathingStrategy());
+                actionPeriod, animationPeriod, 0, 0,new AStarPathingStrategy());
     }
 
     public static Laser createLaser(

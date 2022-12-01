@@ -143,11 +143,11 @@ public final class WorldView
 
     public void growForest()
     {
-        growForestSection(8,31,4,19,500000);
-        growForestSection(8,31,4,8,300000);
-        growForestSection(8,31,15,19,300000);
-        growForestSection(8,12,4,19,300000);
-        growForestSection(27,31,4,19,300000);
+        growForestSection(8,31,4,19,400000);
+        growForestSection(0,39,4,8,100000);
+        growForestSection(0,39,15,19,100000);
+        growForestSection(8,12,0,24,100000);
+        growForestSection(27,31,0,24,100000);
     }
 
     private void growForestSection(int xLow, int xHigh, int yLow, int yHigh, int odds)
@@ -160,6 +160,7 @@ public final class WorldView
                 int value = random.nextInt(odds);
                 if(value % (odds-1) == 0 &&
                         !(world.isOccupied(new Point(i,j))) &&
+                        (world.getBackgroundCell(new Point(i,j)).getCurrentImage() == VirtualWorld.imageList.getImageList("forest").get(0)) &&
                         !(world.isOccupied(new Point(i+1,j))) &&
                         !(world.isOccupied(new Point(i+1,j+1))) &&
                         !(world.isOccupied(new Point(i+1,j-1))) &&
