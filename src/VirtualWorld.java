@@ -102,14 +102,14 @@ public final class VirtualWorld extends PApplet
                 // Make zombieFactory easy
                 ff = new EasyFairyFactory();
                 Random random = new Random();
-                int fairyX = random.nextInt(39);
-                int fairyY = random.nextInt(24);
+                int fairyX = random.nextInt(12,28);
+                int fairyY = random.nextInt(8,15);
                 for(int i=0;i<3;i++)
                 {
                     while(world.isOccupied(new Point (fairyX,fairyY)))
                     {
-                        fairyX = random.nextInt(10,27);
-                        fairyY = random.nextInt(6,17);
+                        fairyX = random.nextInt(12,28);
+                        fairyY = random.nextInt(8,15);
                     }
                     Fairy entityEasy = ff.createFairy("fairy", new Point( fairyX, fairyY),
                             1000,
@@ -126,21 +126,21 @@ public final class VirtualWorld extends PApplet
                 // Make zombieFactory hard
                 ff = new HardFairyFactory();
                 Random random1 = new Random();
-                int fairyX1 = random1.nextInt(39);
-                int fairyY1 = random1.nextInt(24);
+                int fairyX1 = random1.nextInt(12,28);
+                int fairyY1 = random1.nextInt(8, 15);
                 for(int i=0;i<5;i++)
                 {
                     while(world.isOccupied(new Point (fairyX1,fairyY1)))
                     {
-                        fairyX1 = random1.nextInt(10,27);
-                        fairyY1 = random1.nextInt(6,17);
+                        fairyX1 = random1.nextInt(12,28);
+                        fairyY1 = random1.nextInt(8,15);
                     }
-                    Fairy entityEasy = ff.createFairy("fairy", new Point( fairyX1, fairyY1),
+                    Fairy entityHard = ff.createFairy("fairy", new Point( fairyX1, fairyY1),
                             800,
                             51,
                             imageStore.getImageList("RightZombie")); //Fairy.FAIRY_KEY
-                    world.tryAddEntity(entityEasy);
-                    ((ScheduledEntity)entityEasy).scheduleActions(scheduler, world, imageStore);
+                    world.tryAddEntity(entityHard);
+                    ((ScheduledEntity)entityHard).scheduleActions(scheduler, world, imageStore);
                 }
 
                 break;
@@ -151,8 +151,8 @@ public final class VirtualWorld extends PApplet
         background(35, 45, 50);
         textAlign(CENTER);
         textSize(38);
-        text("Game Over!", 600, 200);
-        text(" player " + winner + " wins!", 600, 400);
+        text("Game Over!", 500, 200);
+        text(" player " + winner + " wins!", 500, 400);
     }
 
 
