@@ -10,6 +10,7 @@ public final class VirtualWorld extends PApplet
     //forest (8,4) to (31,19)
     public static double p1X;
 
+    public int winner;
     public static double p1Y;
 
     public static double p2X;
@@ -88,9 +89,11 @@ public final class VirtualWorld extends PApplet
     int gameScreen = 0;
 
     void initScreen() {
-        background(0);
+        background(35,45,50);
         textAlign(CENTER);
-        text("Click on Screen then: 1 = Easy, 2 = Hard", height/2 + 5, width/2);
+        textSize(38);
+        text("Click on Screen then Press one of the following keys:", 600, 200);
+        text(" 1 = Easy, 2 = Hard", 600, 400);
 
         switch (key)
         {
@@ -143,6 +146,19 @@ public final class VirtualWorld extends PApplet
                 break;
         }
     }
+
+    void endScreen() {
+        background(35, 45, 50);
+        textAlign(CENTER);
+        textSize(38);
+        text("Game Over!", 600, 200);
+        text(" player " + winner + " wins!", 600, 400);
+    }
+
+
+
+
+
     public void draw() {
         if (gameScreen == 0)
         {
@@ -375,7 +391,21 @@ public final class VirtualWorld extends PApplet
             }
             p1.setPosition(new Point((int) p1X, (int) p1Y));
             p2.setPosition(new Point((int) p2X, (int) p2Y));
+            if(p1.getScore() == 7)
+            {
+                winner = 1;
+                gameScreen = 2;
+            }
+            if(p2.getScore() == 7)
+            {
+                winner = 2;
+                gameScreen = 2;
+            }
             key = ' ';
+        }
+        else if(gameScreen == 2)
+        {
+            endScreen();
         }
     }
 
