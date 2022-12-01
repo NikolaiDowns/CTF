@@ -1,0 +1,46 @@
+1. how to trigger the event
+
+The world event can be triggered by clicking mouse on the PApplet screen.
+
+2. what should happen when the event is triggered
+
+All neighboring points within the map and self point have their tiles become forest background if they are not already.
+On click point a Slime Entity is spawned in, as well as the nearest Fairy into a "dumb" Fairy.
+
+
+3. what the affected entities should do
+
+The nearest Fairy entity becomes a "dumb Zombie". This Fairy entity's animation and action period is slowed down,
+as well as it looks in the wrong direction (it's image becomes flipped with a boolean field dumb), and changes it pathing
+strategy to be the SimplePathingStrategy.
+4. what the new entity is and how it should behave
+
+ The slime Entity is the new Entity introduced. The Slime entity uses the SimplePathingStrategy and meanders around the world.
+
+5. (if applicable) the names of each partner and what each partner was responsible for
+
+Partners: Nikolai Downs, Yoav Levanoni
+Both partners worked on all classes and are understanding of the whole codebase.
+Listed below are the primary classes each partner worked on.
+
+Nikolai Downs:
+DudeFull(Player1)
+DudeNotFull(Player2)
+LeftSafeZone
+RightSafeZone
+LeftScoreBoard
+RightScoreBoard
+WorldView
+VirtualWorld(Singletons)
+Laser
+Sprite Drawing
+
+Yoav Levanoni:
+PathingStrategies
+Factory Classes
+Fairy(Zombie)
+WorldModel
+House
+Obstacle
+world.sav
+VirtualWorld(Screens, Boundary Logic)
